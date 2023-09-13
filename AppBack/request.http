@@ -1,0 +1,29 @@
+####
+//MOSTRAR USUARIOS
+GET http://localhost:9000/api/users HTTP/1.1
+
+####
+// MOSTRAR PRODUCTOS
+GET http://localhost:9000/api/producto HTTP/1.1
+autorizado:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2OTQ1NzAwMDN9.SrBJxk5bzC4f4ZnIpoLK0LipaEFH-6MMc90_ahPLAAM
+####
+// Register
+POST http://localhost:9000/api/users/register HTTP/1.1
+Content-Type: application/json
+
+{
+    "nombre":"julian",
+    "correo": "julian@gmail.com",
+    "contrasena":"contrasena"}
+
+####
+// Login
+POST http://localhost:9000/api/users/login HTTP/1.1
+Content-Type: application/json
+
+{
+    "correo": "julian@gmail.com",
+    "contrasena":"contrasena"
+    }
+
+
