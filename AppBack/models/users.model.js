@@ -10,12 +10,9 @@ const planShcema = new mongoose.Schema({
 const perroSchema = new mongoose.Schema(
   {
     nombre: { type: String, default: "default", required: false },
-    edad: { type: Number, default: 1 },
-    tamano: { type: String, default: "default" },
-    actividad_fisica: { type: String, default: "default" },
-    plan: [planShcema],
+    edad: { type: Number, default: 1 }, 
   },
-  { _id: false }
+  
 );
 
 const userSchema = new mongoose.Schema({
@@ -36,14 +33,7 @@ const userSchema = new mongoose.Schema({
     type: String,
     default: "normal",
   },
-  perro: [perroSchema],
-});
 
-if (userSchema.perro===undefined) { userSchema.perro='default'
-  
-}
-if (perroSchema.plan===undefined) { perroSchema.plan='default'
-  
-}
+});
 
 export default mongoose.model("usuarios", userSchema);

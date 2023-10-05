@@ -22,8 +22,24 @@ POST http://localhost:9000/api/users/login HTTP/1.1
 Content-Type: application/json
 
 {
-    "correo": "julian@gmail.com",
-    "contrasena":"contrasena"
-    }
+    "correo": "david@gmail.com",
+    "contrasena":"1234"
+}
+
+####
+//Traer perrito
+GET http://localhost:9000/api/perros/perro HTTP/1.1
+Content-Type: application/json
+autorizado:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvX2lkIjoiNjUwZGM0NjcxYWFjZmQ0MTQxYzRlMjRmIiwidXN1YXJpb19yb2xlIjoibm9ybWFsIiwiaWF0IjoxNjk2MjEwNDk1fQ._GMaLBks0KcHQI8NUCFe3emn4UhH1yw7QXVABsK4TSw
 
 
+####
+//crear perrito
+POST http://localhost:9000/api/perros/crearperros HTTP/1.1
+Content-Type: application/json
+autorizado:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvX2lkIjoiNjUwZGM0NjcxYWFjZmQ0MTQxYzRlMjRmIiwidXN1YXJpb19yb2xlIjoibm9ybWFsIiwiaWF0IjoxNjk2MjA5OTgyfQ.S2Po7afLDnZEIZUuzGuxzrXh1ZneurajJICGsVRVtr0
+
+{
+    "nombre":"prueba1",
+    "edad":1
+}

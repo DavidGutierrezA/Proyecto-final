@@ -1,32 +1,16 @@
-
-import express, { response } from 'express';
-import userSchema from '../../models/users.model.js'
-import bcrypt from 'bcryptjs'
-import jwt  from 'jsonwebtoken'
+import express, { response } from "express";
+import userSchema from "../../models/users.model.js";
+import bcrypt from "bcryptjs";
+import jwt from "jsonwebtoken";
 const router = express.Router();
 
-
-
- //traer usuarios
- router.get('',(req, res)=>{
-    userSchema
+//traer usuarios
+router.get("", (req, res) => {
+  userSchema
     .find()
     .then((data) => res.json(data))
-    .catch((error)=> res.json({message: error})) 
+    .catch((error) => res.json({ message: error }));
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 /*
 //voy a crear mi usuario
@@ -83,49 +67,45 @@ router.post('/users',(req, res)=>{
  });
 */
 
-// POST crear registro de usuario 
+// POST crear registro de usuario
 
-router.post('/register', async (require, response)=>{
-    try {
-        require.body.contrasena = bcrypt.hashSync(require.body.contrasena, 12);
-        const userCreate = await userSchema.create(require.body);
-        response.json(userCreate);
-    } catch (error) {
-        response.json({error: error.message})
-    }
+router.post("/register", async (require, response) => {
+  try {
+    require.body.contrasena = bcrypt.hashSync(require.body.contrasena, 12);
+    const userCreate = await userSchema.create(require.body);
+    response.json(userCreate);
+  } catch (error) {
+    response.json({ error: error.message });
+  }
 });
 // LOGIN
 
-router.post('/login', async (require, response)=>{
-  const correoencontrado = await userSchema.findOne({correo: require.body.correo})
-  if(!correoencontrado){
-    return response.json({error: 'Revisa tu nombre de usuario y contrasena'})
+router.post("/login", async (require, response) => {
+  const user = await userSchema.findOne({ correo: require.body.correo });
+  if (!user) {
+    return response.json({ error: "Revisa tu nombre de usuario y contrasena" });
   }
-  const validar = bcrypt.compareSync(require.body.contrasena, correoencontrado.contrasena)
-  if(!validar){return response.json({error: 'Revisa tu nombre de usuario y contrasena'})}
-   
-  response.json({ mensaje: 'Inicio de sesión exitoso', token: createToken(userSchema) })
+  const validar = bcrypt.compareSync(require.body.contrasena, user.contrasena);
+  if (!validar) {
+    return response.json({ error: "Revisa tu nombre de usuario y contrasena" });
+  }
 
-},
+  response.json({
+    mensaje: "Inicio de sesión exitoso",
+    token: createToken(user),
+  });
+});
 
-    
-);
-
-
-function createToken(userSchema){
-    const payload ={
-        usuario_id: userSchema._id,
-        usuario_role : userSchema.usuario_rol,
-    }
-    return jwt.sign(payload,'TOKEN')
+function createToken(user) {
+  const payload = {
+    usuario_id: user._id,
+    usuario_role: user.rol,
+  };
+  console.log(payload)
+  return jwt.sign(payload, "TOKEN");
 }
 
-
 export default router;
-
-
-
-
 
 /*router.post('/login', async (require, response)=>{
     //Comprobar existencia del email
