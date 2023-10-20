@@ -5,6 +5,7 @@ import checkToken from "../../utils/middlewere.js";
 const router = express.Router();
 router.post("/crearperros",(req, res)=>{
   const{nombre,edad}= req.body;
+  console.log('crearperros')
   let propietario= req.user.usuario_id
   const perroNuevo= new perroSchema({
     nombre,
@@ -16,9 +17,10 @@ router.post("/crearperros",(req, res)=>{
     .save()
     .then((data)=>res.json(data))
     .catch((error)=>res.json({message:error}))
-})
+});
 
 router.use(checkToken);
+
 router.get("/perro", async (req, res) => {
   try {
     console.log(req.user)
