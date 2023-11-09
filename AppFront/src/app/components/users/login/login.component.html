@@ -1,0 +1,23 @@
+<main>
+    <div class="cajita-login">
+        <div class="contenedor-login1">
+            <P class="p1">Bienvenido a menjar de Gos</P>
+            <form [formGroup]="formulario" (ngSubmit)="onSubmit()" class="formulario">
+                <section class="mb-3">
+                    <input type="email" class="form-control" formControlName="correo" placeholder="Correo">
+                </section>
+                <section class="mb-3">
+                </section>
+                <input type="password" class="form-control" formControlName="contrasena" placeholder="Contraseña">
+                <section class="contenedor-boton">
+                    <input type="submit" value="Login" class="botoon">
+                </section>
+            </form>
+        </div>
+        <div class="contenedor-login2">
+            
+            <p class="nueva_cuenta"><a href="/register">No tienes cuenta aun?</a></p>
+            <p class="olvido_contrasena">Olvidaste tu contraseña?</p>
+        </div>
+    </div>
+</main>

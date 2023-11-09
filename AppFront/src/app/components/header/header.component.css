@@ -1,0 +1,151 @@
+header {
+    height: 70px;
+    background-color: #225D38;
+    display: flex;
+    align-content: center;
+    color: white;
+    width: 100%;
+    max-width: 100vw;
+
+}
+
+.nombre {
+    font-size: 30px;
+    margin-left: 2%;
+    margin-right: 3%;
+    color: white;
+}
+
+.links {
+    max-width: 100%;
+
+
+
+}
+
+.listalinks {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    list-style: none;
+    justify-content: space-between;
+    background-color: #225d38;
+
+}
+
+.listalinks li {
+    color: white;
+    background-color: #225D38;
+    padding-left: 10px;
+
+}
+
+.listalinks li a {
+    color: white;
+    text-decoration: none;
+    background-color: #225D38;
+}
+
+
+
+img {
+    width: 41px;
+    height: 36px;
+    border: none;
+}
+
+.ultimo_li {
+    display: flex;
+align-self: center;
+
+}
+
+.ultimo_li a {
+    align-self: center;
+    width: 100%;
+    margin-right: 50px;
+    margin-bottom: 0;
+}
+.ultimo_li p{margin-bottom: 0;}
+
+
+
+/* Estilos para el submenu */
+
+.plan {
+
+    cursor: pointer;
+    position: relative;
+    color: white;
+    background-color: #225D38;
+}
+
+
+.titulo-dropdown {
+    color: white;
+
+}
+
+.dropdown-toggle::after {
+    display: none;
+}
+
+.plan:hover .submenu {
+    display: block;
+
+}
+
+.submenu {
+    text-align: start;
+    background-color: #225D38;
+}
+
+@media (max-width: 576px) {
+    header {
+        height: 70px;
+    }
+
+    .nombre {
+        font-size: 30px;
+        margin-left: 0%;
+        margin-right: 17vw;
+        color: white;
+    }
+
+    .listalinks {
+        width: 80%;
+        height: 100%;
+        display: flex;
+        list-style: none;
+        justify-content: space-between;
+        background-color: #225d38;
+        margin: auto;
+
+    }
+
+    .listalinks li {
+        color: white;
+        background-color: #225D38;
+        padding-left: 10px;
+        width: 80%;
+        margin: auto;
+        
+    }
+
+    .plan {
+        margin: 0px;
+        padding:0px ;
+        right: 10px;
+        text-align: start;
+        cursor: pointer;
+        position: relative;
+        color: white;
+        background-color: #225D38;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    header {
+        height: 100px;
+    }
+}

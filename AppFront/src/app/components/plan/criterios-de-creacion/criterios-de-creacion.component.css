@@ -1,0 +1,39 @@
+main {
+    width: 100%;
+    margin-bottom: 100px;
+}
+/*-----Explicacion-----*/
+.como_creamos {
+    width: 90%;
+    text-align: start;
+    margin: 20px auto auto auto; 
+}
+
+.como_creamos h1 {
+    margin-top: 60px;
+    
+}
+.como_creamos p{
+    margin: 40px 0 40px 0;
+    font-size: 20px;
+}
+/*-----Respuestas-----*/
+
+.listado_respuestas {
+    width: 90%;
+    margin: auto;
+}
+
+.listado_respuestas ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.listado_respuestas li {
+    margin: 0;
+    padding: 15px;
+    border-bottom: 1px solid #ccc;
+    font-size: 20px;
+}
+

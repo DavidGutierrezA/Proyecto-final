@@ -1,0 +1,58 @@
+<header>
+    <nav class="navbar navbar-expand-lg links col-lg-12 col-md-12 col-sm-6" style=" z-index: 1000">
+        <div class="container-fluid">
+            <a class="navbar-brand nombre" href="/inicio">Menjar de Gos</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto  listalinks">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/inicio">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <div class="dropdown plan">
+                            <button class="btn dropdown-toggle titulo-dropdown" type="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                Plan
+                            </button>
+                            <ul class="dropdown-menu submenu">
+                                <li><a class="dropdown-item" href="/crearPlan">Crear Plan</a></li>
+                                <li><a class="dropdown-item" href="/gestionarPlan">Gestionar Plan</a></li>
+                                <li><a class="dropdown-item" href="/criterioscreacion">Criterios de Creación</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/productos">Productos</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="/informacionProductos">Información Productos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/informacionProcesos">Información Procesos</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="/carrito"><img
+                                src="../../../assets/imgs/1200px-Font_Awesome_5_solid_shopping-cart.svg.png"
+                                alt="carrito"></a>
+                    </li>
+                    <li class="nav-item ultimo_li">
+                        <ng-container *ngIf="userService.isLogged(); else notLogged">
+                            <a href="/cuenta">
+                                <p class="cuenta">Cuenta</p>
+                            </a>
+                        </ng-container>
+                        <ng-template #notLogged>
+                            <a href="/login">Iniciar Sesión</a>
+                        </ng-template>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>

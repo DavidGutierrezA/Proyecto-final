@@ -1,0 +1,25 @@
+<main>
+    <h1>Gestiona su plan</h1>
+    <h2 *ngFor="let perrito of arrPerritos()">Este es el plan de {{ perrito.nombre }} </h2>
+    <section class="caja_plan">
+
+        <div class="img">
+            <img src="../../../../assets/imgs/vecteezy_food-for-dog-in-bag-isolated-icon_-removebg-preview - Copy.png"
+                alt="">
+        </div>
+        <div class="texto_botones">
+            <p class="nombre_producto">Menjar de Salmon</p>
+            <p class="texto_normal">Alto contenido de Salmon, vegetales y arroz y con todas las vitaminas y minerales
+                que tu
+                companero necesita</p>
+            <p class="texto_informativo">Recibes un envio cada: {{recibeCada}}</p>
+            <p class="texto_informativo">Cantidad de paquetes: {{cantPaquetes}}</p>
+            <p class="texto_informativo">Costo total por envio :${{costTotal}}</p>
+            <p class="texto_informativo">Al dia debe comer: {{aleatorio}}gr</p>
+            <p class="texto_informativo">En cada servicio sirvele: {{serviciosDia}}gr</p>
+            <br>
+            <a href="/crearPlan" class="boton1"><input type="button" class="boton" value="Cambiar plan"></a>
+            <a href="/carrito" class="boton2"><input type="button" class="boton" value="Pagar"></a>
+        </div>
+    </section>
+</main>
