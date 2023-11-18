@@ -1,0 +1,57 @@
+<main>
+    <section class="compras">
+        <div class="encabezados">
+            <ul>
+                <li><strong>Producto</strong></li>
+                <li><strong>Precio/u</strong></li>
+                <li><strong>Cantidad</strong></li>
+                <li><strong>Subtotal</strong></li>
+            </ul>
+        </div>
+
+        <article class="producto-carrito" *ngFor="let productos of arrCarrito">
+            <img src="../../../assets/imgs/vecteezy_food-for-dog-in-bag-isolated-icon_-removebg-preview - Copy.png"
+                alt="Menjar de cordero" class="img-producto">
+            <ul>
+                <li class="producto"><strong class="encabezados-responsive">Producto: </strong>{{productos.nombre}}</li>
+                <li class="precio"><strong class="encabezados-responsive">Precio/u: </strong>$20</li>
+                <li class="cantidad"><strong class="encabezados-responsive">Cantidad: </strong>2</li>
+                <li class="subtotal"><strong class="encabezados-responsive">Subtotal: </strong>$40</li>
+                <li class="eliminar">
+                    <button (click)="borrar(productos)" class="boton-eliminar"> <img src="../../../assets/imgs/x.png"
+                            alt="Eliminar" class="x">
+                        <span>eliminar</span></button>
+                </li>
+            </ul>
+
+        </article>
+
+    </section>
+
+    <section class="caja-pago-contenedor">
+        <p let productos of arrCarrito> <strong>Subtotal:</strong> {{precio()}}
+            <strong>Cantidad:</strong>{{arrCarrito.length+' '}} productos <strong>Envio:</strong>
+        </p>
+        <div class="boton">
+            <button type="button">Realizar pago</button>
+        </div>
+    </section>
+
+
+    <section class="agregar-mas">
+        <button type="button"><a href="/productos">Añadir más productos al carrito</a></button>
+    </section>
+
+    <section class="caja-pago-responsive">
+        <ul let productos of arrCarrito>
+            <li><strong>Subtotal:</strong> {{precio()}}</li>
+            <li> <strong>Cantidad:</strong>{{arrCarrito.length}}productos</li>
+            <li> <strong>Costo del envio:</strong></li>
+        </ul>
+        <div class="boton-responsive">
+            <button type="button">Realizar pago</button>
+        </div>
+
+    </section>
+
+</main>

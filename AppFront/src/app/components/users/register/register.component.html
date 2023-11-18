@@ -1,0 +1,28 @@
+<main>
+    <div class="cajita-login">
+        <div class="contenedor-login1">
+            <p class="p1">Bienvenido a Menjar de Gos</p>
+            <form [formGroup]="formulario" (ngSubmit)="onSubmit()" class="formulario">
+                <section class="mb-3">
+                    <label for="nombre">Nombre</label>
+                    <input type="text" class="form-control" formControlName="nombre">
+                </section>
+                <section class="mb-3">
+                    <label for="correo">Correo</label>
+                    <input type="email" class="form-control" formControlName="correo">
+                </section>
+                <section class="mb-3">
+                    <label for="contrasena">Contraseña</label>
+                    <input type="password" class="form-control" formControlName="contrasena">
+                </section>
+                <section class="contenedor-boton">
+                    <input type="submit" value="Registrarse" class="botoon">
+                </section>
+            </form>
+        </div>
+        <div class="contenedor-login2">
+
+            <p class="yaCuenta"><a href="/login">¿Ya tienes una cuenta?</a></p>
+        </div>
+    </div>
+</main>

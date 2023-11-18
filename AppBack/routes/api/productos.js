@@ -27,4 +27,23 @@ router.post("", (req, res) => {
     .then((data) => res.json(data))
     .catch((error) => res.json({ message: error }));
 });
+
+// Borrar un producto por ID
+router.delete("/:id", (req, res) => {
+  const productId = req.params.id;
+
+  // Utiliza el método findByIdAndDelete de mongoose para eliminar el producto por ID
+  productoSchema
+    .findByIdAndDelete(productId)
+    .then((data) => {
+      if (!data) {
+        return res.status(404).json({ message: "Producto no encontrado" });
+      }
+      res.json({ message: "Producto eliminado exitosamente" });
+    })
+    .catch((error) => res.status(500).json({ message: error }));
+});
+
+
+
 export default router;

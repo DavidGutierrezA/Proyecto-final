@@ -1,0 +1,203 @@
+main {
+
+    width: 100vw;
+    height: auto;
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 30% 70%;
+    margin-bottom: 100px;
+
+}
+
+h1 {
+    grid-column: 1/3;
+    margin: 2% auto 1% 3%;
+}
+
+/*-----FORMULARIO-----*/
+.infop {
+    grid-column: 2;
+    width: 90%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    border: solid 1px #707070;
+    color: #000000;
+    margin: auto;
+    margin-left: 10px;
+    min-height: 100vh;
+
+
+}
+
+.infop label {
+    font-size: 20px;
+    margin-left: 10%;
+}
+
+.input-texto {
+    width: 80%;
+    height: 5vh;
+    border-radius: 33px;
+    border: solid 1px #707070;
+    margin-left: 10%;
+
+}
+
+.boton {
+    color: white;
+    background-color: #80BB01;
+    border: none;
+    width: 10%;
+    height: 7vh;
+    border-radius: 30px;
+    margin: 0px 80% 0px auto;
+}
+
+/*label*/
+.label1 {
+    margin-top: 10vh;
+}
+
+
+
+/*Celulares*/
+@media (max-width: 576px) {
+    main {
+
+        width: 100vw;
+        height: auto;
+        min-height: 100vh;
+        display: grid;
+        grid-template-columns: 1fr;
+        margin-bottom: 100px;
+
+    }
+
+    .app-aside {
+        grid-column: 1/3;
+    }
+
+    h1 {
+        grid-column: 1/3;
+        margin: 2% auto 1% 3%;
+        margin-bottom: 10px;
+    }
+
+    /*-----FORMULARIO-----*/
+    .infop {
+        grid-column: 1/3;
+        width: 90%;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+        border: solid 1px #707070;
+        color: #000000;
+        margin: auto;
+        margin-top: 10px;
+        min-height: 100vh;
+
+
+    }
+
+    .infop label {
+        font-size: 20px;
+        margin-left: 10%;
+    }
+
+    .input-texto {
+        width: 80%;
+        height: 5vh;
+        border-radius: 33px;
+        border: solid 1px #707070;
+        margin-left: 10%;
+
+    }
+
+    .boton {
+        color: white;
+        background-color: #80BB01;
+        border: none;
+        width: 100px;
+        height: 7vh;
+        border-radius: 30px;
+        margin: 10px auto 0px 32px;
+    }
+
+    /*label*/
+    .label1 {
+        margin-top: 10vh;
+    }
+
+}
+
+/*tablets y monitores pequenos*/
+@media (min-width: 768px) and (max-width: 991px) { main {
+
+    width: 100vw;
+    height: auto;
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr;
+    margin-bottom: 100px;
+
+}
+
+.app-aside {
+    grid-column: 1/3;
+}
+
+h1 {
+    grid-column: 1/3;
+    margin: 2% auto 1% 3%;
+    margin-bottom: 10px;
+}
+
+/*-----FORMULARIO-----*/
+.infop {
+    grid-column: 1/3;
+    width: 90%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    border: solid 1px #707070;
+    color: #000000;
+    margin: auto;
+    margin-top: 10px;
+    min-height: 50vh;
+
+
+}
+
+.infop label {
+    font-size: 20px;
+    margin-left: 10%;
+}
+
+.input-texto {
+    width: 80%;
+    height: 5vh;
+    border-radius: 33px;
+    border: solid 1px #707070;
+    margin-left: 10%;
+
+}
+
+.boton {
+    color: white;
+    background-color: #80BB01;
+    border: none;
+    width: 10%;
+    height: 7vh;
+    border-radius: 30px;
+    margin: 0px 80% 0px auto;
+}
+
+/*label*/
+.label1 {
+    margin-top: 10vh;
+}
+}

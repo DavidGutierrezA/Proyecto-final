@@ -1,0 +1,26 @@
+<main>
+    <h1>Crea su plan</h1>
+    <form [formGroup]="formulariop" (ngSubmit)="onSubmit()" class="formulariop">
+        <label for="nombre">Como se llama tu companero?</label>
+        <input type="text" formControlName="nombre" id="nombre" class="redondito">
+        <label for="edad">Que edad tiene tu companero?</label>
+        <input type="text" formControlName="edad" id="edad" class="redondito">
+        <label for="raza">Cual es su raza?</label>
+        <input type="text" class="redondito" id="raza">
+
+        <label for="actividad">Que tanta actividad fisica realiza?</label>
+        <input type="text" class="redondito" id="actividad">
+        <label for="peso">Cual es su peso?</label>
+        <input type="text" class="redondito" id="peso">
+        <label for="alergias">Tiene alguna alergia?</label>
+        <input type="text" class="redondito" id="alergias">
+        <label for="condiciones">Tiene alguna de las siguientes condiciones?</label>
+        <input type="text" class="redondito" id="condiciones">
+        <label for="comida">Le vas a dar solo Menjar de gos?</label>
+        <input type="text" class="redondito" id="comida">
+        <label for="semanas">Cada cuantas semanas quieres recibir tu pedido?</label>
+        <input type="text" class="redondito" id="semanas">
+
+        <button type="submit" class="boton" (click)="semanas">Enviar</button>
+    </form>
+</main>

@@ -1,0 +1,34 @@
+<main>
+    <p class="titulo">Nuestros menus</p>
+    <div class="row">
+        <div class="busqueda col-md-6 col-lg-6 col-sm-6">
+            <div class="div-busqueda ">
+                <img src="../../../assets/imgs/1294834.svg" alt="lupa" class="lupa">
+                <input type="text" class="input-busqueda">
+                <input type="button" class="boton-busqueda" value="Buscar">
+            </div>
+        </div>
+
+        <div class="estimacion col-md-6 col-lg-5 col-sm-6">
+            <a href="/estimaciones"><input type="button" value="Conoce tiempos y costos de envío" class="estimacion-envios"></a>
+        </div>
+    </div>
+
+    <div class="row">
+        <div *ngFor="let producto of arrProductos" class="caja col-md-6 col-lg-4 col-sm-12">
+            <div class="cajita-producto col-md-6 col-lg-4 col-sm-12">
+                <div class="producto">
+                    <img src="../../../assets/imgs/vecteezy_food-for-dog-in-bag-isolated-icon_-removebg-preview - Copy.png"
+                        alt="">
+                    <div class="texto">
+                        <p>{{producto.nombre }}</p>
+                        <p>{{producto.descripcion}}</p>
+                    </div>
+                </div>
+                <div class="div-boton">
+                    <input type="button" class="boton" value="agregar" (click)="agregarCarrito(producto)">
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
