@@ -1,13 +1,14 @@
 import { Injectable, inject } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, firstValueFrom } from 'rxjs';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class PerritoService {
-  perritoUrl= 'http://3.21.244.188:8080/api/perros'
-  perritoUrl2= 'http://3.21.244.188:8080/api/perros/perro'  
+  perritoUrl= `http://${environment.urlActual}:8080/api/perros`
+  perritoUrl2= `http://${environment.urlActual}:8080/api/perros/perro` 
   httpClient = inject(HttpClient);
 
   crearperros(formValue:any){
