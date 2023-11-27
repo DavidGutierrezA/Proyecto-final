@@ -7,8 +7,8 @@ import { environment } from '../../environments/environment';
   providedIn: 'root'
 })
 export class PerritoService {
-  perritoUrl= `http://${environment.urlActual}:8080/api/perros`
-  perritoUrl2= `http://${environment.urlActual}:8080/api/perros/perro` 
+  perritoUrl= `${environment.urlActual}/api/perros`
+  perritoUrl2= `${environment.urlActual}/api/perros/perro` 
   httpClient = inject(HttpClient);
 
   crearperros(formValue:any){

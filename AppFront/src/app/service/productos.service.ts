@@ -11,7 +11,7 @@ import { environment } from '../../environments/environment';
 export class ProductosService {
   constructor() {}
 
-  productoUrl = `http://${environment.urlActual}:8080/api/productos`;
+  productoUrl = `${environment.urlActual}/api/productos`;
 
   httpClient = inject(HttpClient);
 

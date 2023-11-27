@@ -9,8 +9,8 @@ import { environment } from '../../environments/environment';
 export class UsersService {
 
   httpClient = inject(HttpClient);
-  baseUrl = `http://${environment.urlActual}/api/users`;
-  userUrl = `http://${environment.urlActual}/api/users`;
+  baseUrl = `${environment.urlActual}/api/users`;
+  userUrl = `${environment.urlActual}/api/users`;
 
   getAll() {
     return firstValueFrom(
