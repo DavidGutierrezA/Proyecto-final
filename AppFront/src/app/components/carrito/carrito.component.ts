@@ -1,4 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { Productoo } from 'src/app/producto/producto.model';
+import { Store, select } from '@ngrx/store';
+import { estadoProducto } from 'src/app/app.state';
+import { eliminar } from 'src/app/store/producto.actions';
+
 
 @Component({
   selector: 'app-carrito',
@@ -7,23 +12,49 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CarritoComponent implements OnInit {
 
-  arrCarrito: any[] = [];
-  async ngOnInit() {
-    this.arrCarrito = JSON.parse(localStorage.getItem('carrito')!)
-    console.log(this.arrCarrito)  
+  productosCarro: Productoo[] = []
+
+  constructor(
+    private store: Store<estadoProducto>
+  ) {}
+
+  ngOnInit(): void {
+    this.store.pipe(select('Carro')).subscribe((productosCarro: Productoo[]) => {
+      this.productosCarro = productosCarro
+    })
   }
 
-  borrar(producto: any) {
-    const index = this.arrCarrito.findIndex((item) => item.id === producto.id);
+
+  eliminarProducto(productId: any) {
+    console.log('Componente: Eliminando producto con ID:', productId.id);
+    this.store.dispatch(eliminar({ id: productId.id })); 
+  }
+
+
+
+  // arrCarrito: any[] = [];
+  // async ngOnInit() {
+  //   this.arrCarrito = JSON.parse(localStorage.getItem('carrito')!)
+  //   console.log(this.arrCarrito)  
+  // }
+
+  
+   /*borrar(producto: any) {
+   const index = this.productosCarro.findIndex((item) => item.id === producto.id);
 
     if (index !== -1) {
-      this.arrCarrito.splice(index, 1); // Elimina el producto del array
-      localStorage.setItem('carrito', JSON.stringify(this.arrCarrito)); // Actualiza el carrito en el localStorage
+      this.productosCarro.splice(index, 1); // Elimina el producto del array
+      localStorage.setItem('carrito', JSON.stringify(this.productosCarro)); // Actualiza el carrito en el localStorage
     }
-  }
+   }*/
+
+
+
+
+
 
   precio() {
-    let subtotal = this.arrCarrito.length * 20
+    let subtotal = this.productosCarro.length * 20
     console.log('$' + subtotal)
     return ('$' + subtotal)
   }

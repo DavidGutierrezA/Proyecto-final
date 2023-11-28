@@ -22,7 +22,9 @@ import { CreaPlanComponent } from './components/plan/crea-plan/crea-plan.compone
 import { GestionarPlanComponent } from './components/plan/gestionar-plan/gestionar-plan.component';
 import { CriteriosDeCreacionComponent } from './components/plan/criterios-de-creacion/criterios-de-creacion.component';
 import { EstimacionesComponent } from './components/estimaciones/estimaciones.component';
-
+import { StoreModule } from '@ngrx/store';
+import { productoReducer } from './store/producto.reducer';
+import { CarritochiquitoComponent } from './components/carritochiquito/carritochiquito.component';
 
 @NgModule({
   declarations: [
@@ -44,13 +46,16 @@ import { EstimacionesComponent } from './components/estimaciones/estimaciones.co
     GestionarPlanComponent,
     CriteriosDeCreacionComponent,
     EstimacionesComponent,
+    CarritochiquitoComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    StoreModule.forRoot({
+      Carro: productoReducer})
   ],
   providers: [],
   bootstrap: [AppComponent]

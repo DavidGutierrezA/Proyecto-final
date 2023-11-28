@@ -100,6 +100,50 @@ align-self: center;
     background-color: #225D38;
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+.cart {
+    position: relative;
+}
+
+.list {
+    position: absolute;
+    height: 250px;
+    width: 300px;
+    right: 0;
+    display: none;
+    background-color: #225D38;  
+}
+
+.cart:hover .list {
+    display: block;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 @media (max-width: 576px) {
     header {
         height: 70px;

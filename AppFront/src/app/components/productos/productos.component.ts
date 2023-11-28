@@ -1,6 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { find } from 'rxjs';
 import { ProductosService } from 'src/app/service/productos.service';
+import { Store } from '@ngrx/store';
+import { guardar } from 'src/app/store/producto.actions';
+import { Productoo } from 'src/app/producto/producto.model';
+import { estadoProducto } from 'src/app/app.state';
+
 
 @Component({
   selector: 'app-productos',
@@ -10,7 +15,8 @@ import { ProductosService } from 'src/app/service/productos.service';
 export class ProductosComponent implements OnInit {
   arrProductos: any[] = [];
 
-  constructor(private productosService: ProductosService) { }
+  constructor(private productosService: ProductosService,
+    private store: Store) { }
 
   async ngOnInit() {
     try {
@@ -37,7 +43,9 @@ export class ProductosComponent implements OnInit {
   }
 
 
-
+  guardar(newProducts:Productoo) {
+    this.store.dispatch(guardar({productoo: newProducts}))
+  }
 
 
 

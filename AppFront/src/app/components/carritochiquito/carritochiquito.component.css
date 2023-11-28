@@ -1,0 +1,49 @@
+.cart_list_container {
+    background-color: #225D38;
+    overflow: scroll;
+    max-height: 200px;
+    width: 300px;
+}
+
+.cart_list_single_product {
+    
+    margin: 30px auto auto auto;
+    width: 80%;
+    height: 50px;
+    background-color:#80BB01;
+    color:white    ;
+    text-align: center;
+    line-height: 50px;
+}
+.cajaPago{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 50px;
+  justify-content: center;
+  align-content: center;
+}
+
+.cajaPago p{
+    height: 100%;
+    margin: auto;
+    text-align: center;
+    line-height: 50px;
+}
+.cajaPago  strong{
+   height: 100%;
+    text-align: center;
+}
+.cajaPago a{
+    height: 80%;
+    margin: auto;
+}
+
+.cajaPago button{
+    border: none;
+    background-color: #80BB01;
+    border-radius: 20px;
+    width: 80px;
+    height: 40px;
+    
+}

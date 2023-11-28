@@ -1,0 +1,9 @@
+<main><div class="cart_list_container">
+    <article *ngFor="let productitos of productosCarro" class="cart_list_single_product">
+        {{productitos.nombre}} - {{productitos.costo}}
+    </article>
+</div> 
+<div class="cajaPago">
+    <p><strong>subtotal:{{subtotal()}}</strong></p>
+    <a href="/carrito"><button> Pagar</button></a>
+</div></main>

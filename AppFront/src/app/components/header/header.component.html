@@ -37,9 +37,14 @@
                     </li>
 
                     <li class="nav-item">
-                        <a href="/carrito"><img
+                        <div class="cart">
+                            <a href="/carrito"><img
                                 src="../../../assets/imgs/1200px-Font_Awesome_5_solid_shopping-cart.svg.png"
                                 alt="carrito"></a>
+                            <div class="list">
+                                <app-carritochiquito></app-carritochiquito>
+                            </div>     
+                        </div>
                     </li>
                     <li class="nav-item ultimo_li">
                         <ng-container *ngIf="userService.isLogged(); else notLogged">
@@ -51,6 +56,7 @@
                             <a href="/login">Iniciar Sesión</a>
                         </ng-template>
                     </li>
+                   
                 </ul>
             </div>
         </div>
