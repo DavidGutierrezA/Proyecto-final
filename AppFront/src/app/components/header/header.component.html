@@ -37,13 +37,9 @@
                     </li>
 
                     <li class="nav-item">
-                        <div class="cart">
-                            <a href="/carrito"><img
-                                src="../../../assets/imgs/1200px-Font_Awesome_5_solid_shopping-cart.svg.png"
-                                alt="carrito"></a>
-                            <div class="list">
-                                <app-carritochiquito></app-carritochiquito>
-                            </div>     
+                        <div (click)="toggleCart()">
+                            <a ><img src="../../../assets/imgs/1200px-Font_Awesome_5_solid_shopping-cart.svg.png" alt="carrito"></a>
+                            
                         </div>
                     </li>
                     <li class="nav-item ultimo_li">
@@ -62,3 +58,10 @@
         </div>
     </nav>
 </header>
+<aside>
+    <div class="cart">
+    <div class="list" [ngClass]="{'show-list': isCartOpen}">
+        <app-carritochiquito></app-carritochiquito>
+    </div>   
+</div>
+</aside>

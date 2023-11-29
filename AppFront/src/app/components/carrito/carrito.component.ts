@@ -27,7 +27,8 @@ export class CarritoComponent implements OnInit {
 
   eliminarProducto(productId: any) {
     console.log('Componente: Eliminando producto con ID:', productId.id);
-    this.store.dispatch(eliminar({ id: productId.id })); 
+    this.store.dispatch(eliminar({ id: productId._id })); 
+    console.log(productId._id)
   }
 
 
@@ -43,9 +44,8 @@ export class CarritoComponent implements OnInit {
    const index = this.productosCarro.findIndex((item) => item.id === producto.id);
 
     if (index !== -1) {
-      this.productosCarro.splice(index, 1); // Elimina el producto del array
-      localStorage.setItem('carrito', JSON.stringify(this.productosCarro)); // Actualiza el carrito en el localStorage
-    }
+      this.productosCarro.splice(index, 1); 
+      localStorage.setItem('carrito', JSON.stringify(this.productosCarro)); 
    }*/
 
 

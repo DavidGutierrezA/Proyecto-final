@@ -1,5 +1,5 @@
 export interface Productoo {
-  id: any;
+  _id: any;
   nombre:  string  ;
   costo:  string ;
   stock:  number  ;

@@ -2,3 +2,16 @@
  *{
     font-family: 'Comfortaa', sans-serif;
  }
+
+
+   &::-webkit-scrollbar {
+        width: 8px; /* Ajusta el ancho según sea necesario */
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: #80BB01; /* Color del pulgar de la barra de desplazamiento */
+    }
+
+    &::-webkit-scrollbar-track {
+        background-color: #225D38; /* Color de la pista de la barra de desplazamiento */
+    }

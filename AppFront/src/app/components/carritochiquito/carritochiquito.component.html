@@ -1,4 +1,4 @@
-<main><div class="cart_list_container">
+<!--<main><div class="cart_list_container">
     <article *ngFor="let productitos of productosCarro" class="cart_list_single_product">
         {{productitos.nombre}} - {{productitos.costo}}
     </article>
@@ -6,4 +6,38 @@
 <div class="cajaPago">
     <p><strong>subtotal:{{subtotal()}}</strong></p>
     <a href="/carrito"><button> Pagar</button></a>
-</div></main>
+    <a href="/carrito"><button> Detalles</button></a>
+</div></main>--->
+<div>
+<section class="compras">
+    <div class="encabezados">
+        <ul>
+            <li><strong>Producto</strong></li>
+            <li><strong>Precio/u</strong></li>
+            <li><strong>Cantidad</strong></li>
+            <li><strong>Subtotal</strong></li>
+        </ul>
+    </div>
+
+    <article class="producto-carrito" *ngFor="let productos of productosCarro">
+        <img src="../../../assets/imgs/vecteezy_food-for-dog-in-bag-isolated-icon_-removebg-preview - Copy.png"
+            alt="Menjar de cordero" class="img-producto">
+        <ul>
+            <li class="producto"><strong class="encabezados-responsive">Producto: </strong>{{productos.nombre}}</li>
+            <li class="precio"><strong class="encabezados-responsive">Precio/u: </strong>$20</li>
+            <li class="cantidad"><strong class="encabezados-responsive">Cantidad: </strong>1</li>
+            <li class="subtotal"><strong class="encabezados-responsive">Subtotal: </strong>$20</li>
+            <li class="eliminar">
+                <button (click)="eliminarProducto(productos)" class="boton-eliminar"> <p>x</p>
+                    <span>eliminar</span></button>
+            </li>
+        </ul>
+
+    </article>
+ 
+</section>
+<div class="cajaPago">
+    <p><strong>subtotal:{{subtotal()}}</strong></p>
+    <a href="/carrito"><button> Pagar</button></a>
+    <a href="/carrito"><button> Detalles</button></a>
+</div></div>

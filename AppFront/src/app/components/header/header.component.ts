@@ -9,4 +9,11 @@ import { UsersService } from 'src/app/service/users.service';
 export class HeaderComponent {
 
 userService =inject(UsersService)
+
+
+ isCartOpen: boolean = false;
+toggleCart() {
+    this.isCartOpen = !this.isCartOpen;
+  }
 }
+

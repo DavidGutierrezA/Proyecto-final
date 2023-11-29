@@ -10,12 +10,13 @@ export const productoReducer = createReducer(
     estadoInicial,
     on(guardar, (state, { productoo }) => {
       const nuevoEstado = [...state, productoo];
+      console.log(nuevoEstado)
       localStorage.setItem('cartList', JSON.stringify(nuevoEstado));
       return nuevoEstado;
     }),
     on(eliminar, (state, { id }) => {
     console.log('Reducer: Eliminando producto con ID:', id);
-    const nuevoEstadoo = state.filter(producto => producto.id !== id);
+    const nuevoEstadoo = state.filter(producto => producto._id !== id);
     console.log(nuevoEstadoo);
     localStorage.setItem('cartList', JSON.stringify(nuevoEstadoo));
     return nuevoEstadoo;

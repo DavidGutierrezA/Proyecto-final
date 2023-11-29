@@ -115,18 +115,20 @@ align-self: center;
 
 .cart {
     position: relative;
+    z-index: 1000;
 }
 
 .list {
     position: absolute;
-    height: 250px;
-    width: 300px;
+    min-height: 80vh;
+    width: auto;
     right: 0;
     display: none;
-    background-color: #225D38;  
+    background-color:#225D38;  
 }
 
-.cart:hover .list {
+.show-list {
+    right: 0;
     display: block;
 }
 

@@ -1,9 +1,20 @@
-.cart_list_container {
+/*.cart_list_container {
     background-color: #225D38;
-    overflow: scroll;
-    max-height: 200px;
-    width: 300px;
-}
+    overflow: auto;
+    min-height: 80vh;
+    width: 500px;
+
+    &::-webkit-scrollbar {
+        width: 8px; 
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: #80BB01; 
+
+    &::-webkit-scrollbar-track {
+        background-color: #225D38; 
+
+
 
 .cart_list_single_product {
     
@@ -14,6 +25,9 @@
     color:white    ;
     text-align: center;
     line-height: 50px;
+}*/
+*{
+    color: white;
 }
 .cajaPago{
     display: flex;
@@ -46,4 +60,150 @@
     width: 80px;
     height: 40px;
     
+}
+
+
+
+/*-----Compras(izquierda)-----*/
+
+
+.encabezados ul {
+    height: 100%;
+    display: flex;
+    list-style: none;
+    flex-direction: row;
+    align-items: center;
+    margin: 0px 0px 0px 0px;
+margin-left: 200px ;
+}
+
+.encabezados ul li {
+    height: 100%;
+    margin-right: 120px;
+    align-self: center;
+    font-size: 17px;
+    width: 10px;
+
+}
+
+.encabezados-responsive {
+    display: none;
+}
+
+.compras {
+    margin: 0 0 0 0;
+    height: 80vh;
+    overflow: auto;
+
+    &::-webkit-scrollbar {
+        width: 8px; 
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: black; 
+        height: 20px;
+
+    &::-webkit-scrollbar-track {
+        background-color: #225D38; 
+    }}
+}
+
+.producto-carrito {
+    display: flex;
+    flex-direction: row;
+    border: solid 1px #707070;
+    width: 90%;
+    height: 170px;
+    margin: 40px auto auto auto;
+
+}
+
+.img-producto {
+    border-right: solid 1px #707070;
+}
+
+.producto-carrito ul {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    justify-content: space-between;
+ 
+}
+
+
+
+.x {
+    width: 10px;
+    height: 10px;
+
+}
+
+.boton-eliminar {
+    width: 100px;
+    display: flex;
+    flex-direction: column;
+    background-color: transparent;
+    border: none;
+    align-items: center;
+}
+.boton-eliminar p{
+    color: red;
+}
+
+
+/*LI*/
+li {
+    margin-top: 20px;
+}
+.producto{
+    padding-right:80px;
+}
+.precio{
+    padding-right:130px;
+}
+.cantidad{
+    padding-right:95px;
+}
+.subtotal{
+    padding-right: 30px;
+}
+
+/*-----Pago(derecha)----*/
+
+
+.caja-pago-contenedor {
+    border: solid 1px #707070;
+    width: 13vw;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 70px auto auto auto;
+    justify-self: center;
+    position: sticky;
+    top: 70px;
+
+}
+
+.caja-pago-contenedor button {
+    background-color: #80BB01;
+    border: 0px;
+    border-radius: 36px;
+    width: 10vw;
+    height: 10vh;
+    justify-self: flex-end;
+
+}
+
+.caja-pago-contenedor p {
+    margin: 20px 5px 0 5px;
+}
+
+.caja-pago-responsive {
+    display: none;
+}
+
+.boton {
+    justify-self: flex-end;
+    margin-top: 90%;
 }
